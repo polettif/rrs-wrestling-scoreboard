@@ -1,0 +1,129 @@
+{
+  "keymap": {
+    "toggle": "space",
+    "next": "z",
+    "prev": "t",
+    "reset": "y",
+    "incrRedWres": "f",
+    "decrRedWres": "d",
+    "incrRedTeam": "v",
+    "decrRedTeam": "c",
+    "incrBluWres": "j",
+    "decrBluWres": "k",
+    "incrBluTeam": "n",
+    "decrBluTeam": "m",
+    "activeRed": "e",
+    "activeBlu": "i",
+    "incrWarnRed": "w",
+    "decrWarnRed": "q",
+    "incrWarnBlu": "o",
+    "decrWarnBlu": "p",
+    "openMatchConfig": ",",
+    "toggleOverview": "1"
+  },
+  "fights": [{
+    "red": "Eduardo Enz",
+    "blu": "Newton Nordby",
+    "weight": "57",
+    "greco": false
+  }, {
+    "red": "Franklin Fredricks",
+    "blu": "Dario Dorsey",
+    "weight": "61",
+    "greco": true
+  }, {
+    "red": "Victor Valerius",
+    "blu": "Danny Dorr",
+    "weight": "65",
+    "greco": false
+  }, {
+    "red": "Fabian Freyberg",
+    "blu": "Jean-Jacques Joux",
+    "weight": "70",
+    "greco": true
+  }, {
+    "red": "Boris Blocker",
+    "blu": "David Demarus",
+    "weight": "74",
+    "greco": false
+  }, {
+    "red": "Claude Coble",
+    "blu": "Leon Lagrange",
+    "weight": "74",
+    "greco": true
+  }, {
+    "red": "Cornell Corsio",
+    "blu": "Beni Broderick",
+    "weight": "80",
+    "greco": false
+  }, {
+    "red": "Ramon Risch",
+    "blu": "Anton Augsberg",
+    "weight": "86",
+    "greco": true
+  }, {
+    "red": "Elias Eicher",
+    "blu": "Frankie Fagan",
+    "weight": "97",
+    "greco": false
+  }, {
+    "red": "Rolf Röthlisberger",
+    "blu": "Herbert Hayek",
+    "weight": "130",
+    "greco": true
+  }],
+  "match": {
+    "red": "RR Beispiel",
+    "blu": "RC Gegner",
+    "showWeigth": true,
+    "lastPeriod": 2,
+    "buzzer": "Buzz",
+    "mmSet": true,
+    "showTeams": true,
+    "sponsors": {
+      "directoryLight": "sponsoren/light/",
+      "directoryDark": "sponsoren/dark/",
+      "interval": 45,
+      "quantity": 8,
+      "show": true
+    },
+    "theme": false,
+    "wrestlersAboveTeams": true
+  },
+  "lang": {
+    "periodSuffix": ". Halbzeit",
+    "weightSuffix": " kg",
+    "greco": "Greco",
+    "nonGreco": "Freistil",
+    "grecoShort": "G",
+    "nonGrecoShort": "F",
+    "fullscreenOn": "Vollbild ein",
+    "fullscreenOff": "Vollbild aus"
+  },
+  "timer": {
+    "period": {
+      "name": "period",
+      "minutes": 3,
+      "seconds": 0,
+      "countdown": true,
+      "subsecond": 10,
+      "alwaysLeadZero": true
+    },
+    "pause": {
+      "name": "pause",
+      "minutes": 0,
+      "seconds": 30,
+      "countdown": true,
+      "subsecond": 0,
+      "alwaysLeadZero": false
+    },
+    "active": {
+      "name": "active",
+      "minutes": 0,
+      "seconds": 30,
+      "countdown": true,
+      "subsecond": 0,
+      "alwaysLeadZero": false
+    }
+  }
+}

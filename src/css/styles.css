@@ -1,0 +1,527 @@
+@font-face {
+    font-family: "Aurulent";
+    src: url("../fonts/AurulentSansMono-Regular.otf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, input {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 100%;
+}
+
+var {
+    font-style: normal;
+}
+
+a {color:inherit;}
+a:hover {text-decoration: none;}
+
+#board {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+/* BOX */
+
+.box {
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    width: 32%;
+    font-size: 3em;
+}
+
+.head {
+    top: 2%;
+}
+
+.foot {
+    bottom: 10%;
+}
+
+.blu {
+    right: 2%;
+}
+
+.red {
+    left: 2%;
+}
+
+/* HOVERBAR */
+
+#titlebar {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    z-index: 3;
+    font-size: 1.2em;
+}
+
+#titlebar ul {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid grey;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#titlebar li {
+    display: inline-block;
+    padding: 0.2em;
+    margin: 0 0.4em;
+}
+
+#titlebar button {
+    padding: 0.3em;
+}
+
+#titlebar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#titlebar code {
+    font-family: Aurulent;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* FIGHTOVERVIEW */
+
+#overview {
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+	display: none;
+}
+
+#overview div {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:100%;
+	width:100%;
+}
+
+#overview table {
+	width:55%;
+    font-size: 180%;
+    border-collapse: collapse;
+}
+
+#overview tr:nth-child(even) {
+    background-color: #DDD;
+}
+
+#overview td {
+	text-align: center;
+	padding: 2% 1.4%;
+}
+
+#overview th {
+    padding: 0.4em;
+	font-family: "Roboto Medium";
+	font-size:180%;
+}
+
+#overview tr :first-child {
+	text-align: left;
+	width: 46%;
+}
+
+#overview tr :last-child {
+    text-align: right;
+	width: 46%;
+}
+
+#overview span {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	height:100%;
+	padding: 0 0.4%;
+	font-size:6em;
+	position: absolute;
+}
+
+#overview img {
+	width:60%;
+	position:relative;
+	left:-2%;
+}
+
+#overviewRedBox {
+	background-color:#CC0000;
+	left: 0%;
+}
+
+#overviewBluBox {
+	background-color:#0000CC;
+	right: 0%;
+}
+
+
+/* SCORES */
+
+.box table {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    border-spacing: 0.08em;
+}
+
+.name {
+    font-family: 'Roboto Medium';
+    vertical-align: bottom;
+    padding-bottom: 0.2em;
+    height: 2.5em;
+}
+
+.box td {
+    border: 1px solid white;
+    border-color: transparent;
+}
+
+.score {
+    color: white;
+    font-family: 'Roboto Medium';
+    font-size: 1.8em;
+    width: 2em;
+    padding: 0.1em;
+}
+
+.red .score, .red .warning {
+    background-color: red;
+}
+
+.blu .score, .blu .warning {
+    background-color: blue;
+}
+
+.scoreside {
+    width: 0.3em;
+}
+
+.info .name {
+    margin-bottom: 1.8em;
+}
+
+/* TIME */
+
+.clock {
+    font-family: Aurulent, monospace;
+    font-weight: bold;
+}
+
+.middle {
+    width: 100%;
+}
+
+.middle td {
+    border: 0;
+}
+
+.time {
+    font-size: 1.8em;
+    color: black;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+.pt {
+    margin-left: -0.1em;
+    margin-right: -0.1em;
+}
+
+.active {
+    display: block;
+    text-align: center;
+    padding: 5%;
+    width: 50%;
+    margin: auto;
+    font-family: 'Roboto Medium';
+}
+
+.pause {
+    display: block;
+}
+
+.red .active {
+    color: red;
+}
+
+.blu .active {
+    color: blue;
+}
+
+.sponsors {
+    vertical-align: bottom;
+}
+
+.sponsors img {
+    vertical-align: bottom;
+    margin: auto;
+    max-width: 35%;
+    max-height: 4em;
+}
+
+/* Optionen */
+
+.submitBar {
+    display: block;
+    height: 1.8em;
+    clear: both;
+    padding-top: 1.8%;
+    margin-top: 1.8%;
+    border-top: 1px solid grey;
+}
+
+.config {
+    font-size: 1em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: 5;
+    background-color: #EEE;
+    display: none;
+}
+
+.config .wrap {
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.config .right {
+    float: right;
+    width: 30%;
+}
+
+#fights {
+    display: inline;
+    border-collapse: collapse;
+    margin-right: 5%;
+    /*margin-bottom: 5%;*/
+}
+
+#fights th {
+    padding-right: 0.6em;
+    padding-bottom: 0.3em;
+    text-align: left;
+}
+
+#fights td {
+    padding-bottom: 0.3em;
+    padding-right: 0.3em;
+}
+
+#fights td.weight {
+    width: 4em;
+}
+
+input[name=weight] {
+    width: 100%;
+}
+
+#fights td.greco {
+    text-align: center;
+}
+
+#fights select {
+    font-size: 0.7em;
+    width: 10em;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.3em;
+}
+
+input[name^=red], input[name^=blu] {
+    width: 12em;
+}
+
+#input-buzzers {
+  width:9em;
+}
+
+.left {
+    float: left;
+    width: 12em;
+}
+
+/* lists */
+
+h3 {
+    font-size: 1em;
+    padding-top: 0.8em;
+    padding-bottom: 0.2em;
+}
+
+ul {
+    margin-bottom: 1.6em;
+    line-height: 1.4em;
+}
+
+li {
+    list-style-type: none;
+}
+
+li span {
+    display: inline-block;
+    width: 5em;
+}
+
+.config hr {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: 0.5px solid grey;
+}
+
+input {
+    border: 0;
+    padding: 0.3em;
+    background-color: #EEE;
+}
+
+input.duration {
+    width: 4em;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.invalid {
+    background-color: #f79b9b;
+}
+
+/* keys config */
+
+#keysConfig .col {
+    width: 51%;
+    float: left;
+    display: block;
+}
+
+#keysConfig .wrap {
+    width: 40%;
+    line-height: 2em;
+}
+
+#keysConfig span {
+    display: inline-block;
+    width: 11em;
+}
+
+#keysConfig input {
+    width: 3em;
+}
+
+#keysConfig .submitBar {
+    margin-top: 3em;
+}
+
+/* button */
+
+button {
+    padding: 0.3em;
+    margin: 0.2em;
+    background-color: #DDD;
+    border: 1px solid grey;
+}
+
+button:hover {
+    background-color: #EEE;
+}
+
+button:active {
+    background-color: #CCC;
+}
+
+.submit {
+    float: right;
+}
+
+nav button {
+    padding: 0.7em;
+}
+
+button.save {
+    background-color: #77DD77;
+}
+
+/* save */
+
+button.save:hover {
+    background-color: #88EE88;
+}
+
+button.save:active {
+    background-color: #5A5;
+}
+
+/* default button */
+
+button.loadDefaults {
+    /*width:6em;*/
+    display: inline;
+    text-align: left;
+}
+
+.closeX {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    float: right;
+}
+
+#impressum {
+    clear: both;
+    width: 30%;
+    margin: auto;
+    position: relative;
+    top: -2em;
+    text-align: center;
+    margin-bottom: -2em;
+    color: #999;
+    font-size: 0.9em;
+}
+
+#sound-attribution {
+    font-size: 80%;
+    margin-top:0px;
+    margin-bottom:5px;
+}

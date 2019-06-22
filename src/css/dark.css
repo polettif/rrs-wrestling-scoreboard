@@ -1,0 +1,28 @@
+#board {
+	background-color: black;
+}
+
+.name {
+	color:white;
+}
+
+.time {
+  color: white;
+}
+
+.red .active, .blu .active {
+  color: white;
+}
+
+.config {
+  background-color: #333;
+}
+
+#overview {
+	background-color: black;
+	color:white;
+}
+
+#overview tr:nth-child(even) {
+    background-color: #333;
+}

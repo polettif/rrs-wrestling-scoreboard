@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "noLib": false,
+    "outDir": "src/",
+    "preserveConstEnums": true,
+    "reactNamespace": "dom",
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "ES6"
+  },
+  "compileOnSave": true,
+  "include": [
+    "ts/*"
+  ]
+}

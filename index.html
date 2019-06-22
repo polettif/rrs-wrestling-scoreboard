@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>RRS scorebaord</title>
+	<link rel="stylesheet" href="src/css/normalize.css" />
+	<link rel="stylesheet" href="src/css/styles.css" />
+	<link rel="icon" href="src/img/logo_favicon_small.png" type="image/png" />
+</head>
+
+<body>
+	<div id="board">
+
+		<nav id="titlebar">
+			<ul>
+				<li>gr&ouml;sser: <code>[Ctrl +]</code></li>
+				<li>kleiner: <code>[Ctrl -]</code></li>
+				<li><button onclick="board.toggleFullscreen()" id="fullscreenButton"></button></li>
+				<li><button onclick="matchConfig.open()" id="settingsButton">Einstellungen</button></li>
+			</ul>
+		</nav>
+
+		<div class="box head middle">
+			<table class="center">
+				<tr>
+					<td class="name">
+						<var id="periodInfo"></var>
+					</td>
+				</tr>
+				<tr>
+					<td class="time">
+						<var class="clock" id="periodClock"></var>
+					</td>
+				</tr>
+				<tr>
+					<td class="time">
+						<span class="clock">&nbsp;</span>
+						<var class="clock" id="pauseClock"></var>
+						<span class="clock">&nbsp;</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="name">
+						<var id="weight"></var><br />
+						<var id="style"></var>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="box head red">
+			<table>
+				<tr>
+					<td colspan="5" class="name">
+						<var id="red-head-name"></var>
+					</td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside w3"></td>
+					<td class="score" rowspan="3">
+						<var id="red-head-score"></var>
+					</td>
+					<td class="scoreside"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside w2"></td>
+					<td class="scoreside"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside w1"></td>
+					<td class="scoreside"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="time" colspan="5">
+						<var class="active clock" id="activeclock-red-head"></var>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="box foot red">
+			<table>
+				<tr>
+					<td class="time" colspan="5">
+						<var class="active clock" id="activeclock-red-foot"></var>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="name">
+						<var id="red-foot-name"></var>
+					</td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside w3"></td>
+					<td class="score" rowspan="3">
+						<var id="red-foot-score"></var>
+					</td>
+					<td class="scoreside"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside w2"></td>
+					<td class="scoreside"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside w1"></td>
+					<td class="scoreside"></td>
+					<td class="buffer"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="box head blu">
+			<table>
+				<tr>
+					<td colspan="5" class="name">
+						<var id="blu-head-name"></var>
+					</td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside"></td>
+					<td class="score" rowspan="3">
+						<var id="blu-head-score"></var>
+					</td>
+					<td class="scoreside w3"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside"></td>
+					<td class="scoreside w2"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside"></td>
+					<td class="scoreside w1"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="time" colspan="5">
+						<var class="active clock" id="activeclock-blu-head"></var>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="box foot blu">
+			<table>
+				<tr>
+					<td class="time" colspan="5">
+						<var class="active clock" id="activeclock-blu-foot"></var>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="name">
+						<var id="blu-foot-name"></var>
+					</td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside"></td>
+					<td class="score" rowspan="3">
+						<var id="blu-foot-score"></var>
+					</td>
+					<td class="scoreside w3"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside"></td>
+					<td class="scoreside w2"></td>
+					<td class="buffer"></td>
+				</tr>
+				<tr>
+					<td class="buffer"></td>
+					<td class="scoreside"></td>
+					<td class="scoreside w1"></td>
+					<td class="buffer"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="box foot middle">
+			<table class="center">
+				<tr>
+					<td class="center sponsors">
+						<div>
+							<img id="sponsor" src="src/img/logo_weg.png" alt="Sponsor" />
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- ### MATCH-UEBERSICHT -->
+		<div id="overview">
+			<span class="score" id="overviewRedBox"><var id="overviewRed"></var></span>
+			<span class="score" id="overviewBluBox"><var id="overviewBlu"></var></span>
+			<div>
+				<img src="src/img/logo_grau.png" />
+				<table>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- ### CONFIG ### -->
+	<div id="matchConfig" class="config">
+		<div class="wrap">
+			<a href="#" class="closeX" onclick="matchConfig.close()">X</a>
+			<div class="right">
+				<h3>Kampfdauer</h3>
+				<ul>
+					<li>
+						<span>Minuten:</span>
+						<input id="input-period-minutes" type="number" class="duration" />
+					</li>
+					<li>
+						<span>Sekunden:</span>
+						<input id="input-period-seconds" type="number" class="duration" />
+					</li>
+				</ul>
+
+				<h3>Ton</h3>
+				<div id="sound-attribution"> 
+					<a href="http://soundbible.com/287-Industrial-Alarm.html">Industrial Alarm</a>,
+					<a href="http://soundbible.com/1450-Air-Horn.html">Schiff</a>,
+					<a href="http://soundbible.com/1542-Air-Horn.html">AirHorn</a>,
+					<a href="http://soundbible.com/1204-Buzz.html">Buzz</a>,
+					<a href="http://soundbible.com/1450-Air-Horn.html">DoorBuzzer</a>	
+				</div>
+				<ul>
+					<li>
+						<select id="input-buzzers"></select>
+					</li>
+				</ul>					
+
+				<h3>Optionen</h3>
+				<ul>
+					<li><input type="checkbox" id="input-mmSet" />
+						<label for="input-mmSet">MM Reihenfolge <em>(1, 10, 2, 9,...)</em></label></li>
+					<li><input type="checkbox" id="input-showTeams" onclick="matchConfig.toggleInputs()" />
+						<label for="input-showTeams">Teamnamen/-punkte anzeigen</label></li>
+					<li><input type="checkbox" id="input-showWeigth" onclick="matchConfig.toggleInputs()" />
+						<label for="input-showWeigth">Gewicht und Stil anzeigen</label></li>
+					<li><input type="checkbox" id="input-showSponsors" />
+						<label for="input-showSponsors">Sponsoren anzeigen</label></li>
+					<li><input id="input-countdown" type="checkbox" onclick="matchConfig.toggleInputs()" />
+						<label for="input-countdown">Countdown</label></li>
+					<li><input id="input-subsecond" type="checkbox" />
+						<label for="input-subsecond">Zehntelsekunden anzeigen</label></li>
+					<li><input id="input-theme" type="checkbox" />
+						<label for="input-theme">Dunkler Hintergrund</label></li>
+					<li><input id="input-wrestlersAboveTeams" type="checkbox" />
+						<label for="input-wrestlersAboveTeams">Ringer oben anzeigen</label></li>
+				</ul>
+
+				<h3>Tastatur</h3>
+				<ul>
+					<li><button onclick="keysConfig.open()">Tastaturk&uuml;rzel &auml;ndern...</button></li>
+				</ul>
+			</div>
+
+			<table id="fights">
+				<tr>
+					<th>Gewicht</th>
+					<th>Greco&nbsp;&nbsp;</th>
+					<th>Rot</th>
+					<th>Blau</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<select id="select-default-weights" onchange="matchConfig.loadDefaults()">
+							<option value="0" selected="selected">Voreinstellungen...</option>
+							<option value="1">MM Hinrunde</option>
+							<option value="2">MM R&uuml;ckrunde</option>
+						</select>
+					</td>
+					<td><input id="input-name-red" name="red-team" type="text" /></td>
+					<td><input id="input-name-blu" name="blu-team" type="text" /></td>
+				</tr>
+			</table>
+
+			<div>
+				<h3>Wettkampfliste</h3>
+				<ul>
+					<li>
+						<button onclick="matchConfig.clearNames()">Namen l&ouml;schen...</button>
+					</li>
+					<li>
+						<button onclick="matchConfig.addFight()">Kampf hinzufügen</button>
+						<button onclick="matchConfig.removeFight()">Kampf entfernen</button>
+					</li>
+				</ul>
+			</div>
+
+			<div class="submitBar">
+				<a id="dummyAnchor"></a>
+				<input type="file" id="fileInput" accept=".json" />
+				<button onclick="matchConfig.loadFromFile()">Datei laden...</button>
+				<button onclick="matchConfig.saveToFile()">Datei speichern...</button>
+				<div class="submit">
+					<button onclick="matchConfig.close()">Abbrechen</button>
+					<button onclick="matchConfig.submit()" class="save">Speichern und schliessen</button>
+				</div>
+			</div>
+			<div id="impressum"><a href="https://www.github.com/polettif/rrs-scoreboard/">RRS scoreboard v1.1</a><br/>Flavio Poletti &ndash; 2019</div>
+		</div>
+	</div>
+
+	<div id="keysConfig" class="config">
+		<div class="wrap">
+			<h3>Tastaturk&uuml;rzel&nbsp;&nbsp;&nbsp;
+				<select id="select-default-keymapping" onchange="keysConfig.loadDefaults()">
+					<option value="0" selected="selected">Voreinstellungen...</option>
+					<option value="tastatur">Tastatur Standard</option>
+					<option value="alos">Aloszeit Box</option>
+				</select>
+			</h3>
+			<form id="keymappingform">
+			</form>
+			<div class="submitBar">
+				<div class="submit">
+					<button onclick="keysConfig.close()" tabindex="-1">Abbrechen</button>
+					<button onclick="keysConfig.submit()" class="save" tabindex="-1">Speichern</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="src/lib/jquery.js"></script>
+	<script src="src/lib/keypress.js"></script>
+	<script src="src/lib/fscreen.js"></script>
+	<script src="src/lib/clone.js"></script>
+	<script src="src/defaults.js"></script>
+	<script src="src/script.js"></script>
+</body>
+
+</html>
