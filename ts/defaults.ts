@@ -148,7 +148,7 @@ defaults.settings = {
 	keymap: defaults.keymaps["tastatur"],
 	fights: defaults.fights["mm"],
 	match: {
-		red: "RR Schattdorf",
+		red: "RR Heimteam",
 		blu: "Gäste",
 		showWeigth: true,
 		lastPeriod: 2,
@@ -159,7 +159,7 @@ defaults.settings = {
 			directoryLight: "sponsoren/light/",
 			directoryDark: "sponsoren/dark/",
 			interval: 45,
-			quantity: 3,
+			quantity: 2,
 			show: true
 		},
 		theme: false,

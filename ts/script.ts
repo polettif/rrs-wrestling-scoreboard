@@ -365,7 +365,7 @@ class Names {
 	public move(delta: number) {
 		if (this.o + delta > 0 && this.o + delta <= settings.fights.length) {
 			this.o += delta;
-			if (settings.match.mmSet) {
+			if (settings.match.mmSet && settings.fights.length == 10) {
 				this.c = this.mm[this.o];
 			} else {
 				this.c = this.o - 1;
@@ -514,7 +514,7 @@ class Sponsors {
 		const src = this.dir + pad0(this.current, 2) + ".png";
 		labels.sponsor.attr("src", src);
 		this.current += 1;
-		if (this.current >= settings.match.sponsors.quantity) {
+		if (this.current > settings.match.sponsors.quantity) {
 			this.current = 1;
 		}
 	}
@@ -694,7 +694,7 @@ class MatchConfig implements Config {
 
 		this.fillValues(settings);
 
-		labels.loadsave.fileInput.addEventListener("change", this.readSingleFile, false);
+		labels.loadsave.fileInput.addEventListener("change", this.readFile, false);
 
 		// load buzzer audios
 		for (const key in defaults.buzzerFiles) {
@@ -933,7 +933,7 @@ class MatchConfig implements Config {
 		labels.loadsave.fileInput.click();
 	}
 
-	private readSingleFile(e: any) {
+	public readFile(e: any) {
 		const file = e.target.files[0];
 		if (!file) {
 			return;
@@ -1047,6 +1047,7 @@ class Board {
 	private timer: Timer = new Timer();
 
 	constructor() {
+		this.load();
 		this.setTheme();
 		this.loadTitleBar();
 	}

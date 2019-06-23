@@ -270,7 +270,7 @@ class Names {
     move(delta) {
         if (this.o + delta > 0 && this.o + delta <= settings.fights.length) {
             this.o += delta;
-            if (settings.match.mmSet) {
+            if (settings.match.mmSet && settings.fights.length == 10) {
                 this.c = this.mm[this.o];
             }
             else {
@@ -407,7 +407,7 @@ class Sponsors {
         const src = this.dir + pad0(this.current, 2) + ".png";
         labels.sponsor.attr("src", src);
         this.current += 1;
-        if (this.current >= settings.match.sponsors.quantity) {
+        if (this.current > settings.match.sponsors.quantity) {
             this.current = 1;
         }
     }
@@ -563,7 +563,7 @@ class MatchConfig {
         this.fightRow += '<td><input type="text" name="blu" /></td>';
         this.fightRow += '</tr>';
         this.fillValues(settings);
-        labels.loadsave.fileInput.addEventListener("change", this.readSingleFile, false);
+        labels.loadsave.fileInput.addEventListener("change", this.readFile, false);
         for (const key in defaults.buzzerFiles) {
             const bf = defaults.buzzerFiles[key];
             this.audios[key] = bf != "" ? new Audio(bf) : new Audio();
@@ -753,7 +753,7 @@ class MatchConfig {
     loadFromFile() {
         labels.loadsave.fileInput.click();
     }
-    readSingleFile(e) {
+    readFile(e) {
         const file = e.target.files[0];
         if (!file) {
             return;
@@ -845,6 +845,7 @@ class Board {
         this.names = new Names();
         this.scores = new Scores();
         this.timer = new Timer();
+        this.load();
         this.setTheme();
         this.loadTitleBar();
     }
