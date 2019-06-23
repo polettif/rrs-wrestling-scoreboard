@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: "Roboto";
+    font-family: "Roboto Regular";
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
@@ -19,7 +19,7 @@
 }
 
 body, input {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', 'Roboto Regular', Helvetica, Arial, sans-serif;
     font-size: 100%;
 }
 
@@ -101,7 +101,7 @@ a:hover {text-decoration: none;}
 }
 
 #titlebar code {
-    font-family: Aurulent;
+    font-family: 'Aurulent', 'Lucida Console', Monaco, monospace;
     font-size: 0.8em;
     font-weight: bold;
 }
@@ -142,7 +142,8 @@ a:hover {text-decoration: none;}
 
 #overview th {
     padding: 0.4em;
-	font-family: "Roboto Medium";
+    font-family: 'Roboto', 'Roboto Medium';
+    font-weight: 500;
 	font-size:180%;
 }
 
@@ -195,7 +196,8 @@ a:hover {text-decoration: none;}
 }
 
 .name {
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto', 'Roboto Medium';
+    font-weight: 500;
     vertical-align: bottom;
     padding-bottom: 0.2em;
     height: 2.5em;
@@ -208,7 +210,8 @@ a:hover {text-decoration: none;}
 
 .score {
     color: white;
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto', 'Roboto Medium';
+    font-weight: 500;
     font-size: 1.8em;
     width: 2em;
     padding: 0.1em;
@@ -233,7 +236,7 @@ a:hover {text-decoration: none;}
 /* TIME */
 
 .clock {
-    font-family: Aurulent, monospace;
+    font-family: 'Aurulent', 'Lucida Console', Monaco, monospace;
     font-weight: bold;
 }
 
@@ -267,7 +270,8 @@ a:hover {text-decoration: none;}
     padding: 5%;
     width: 50%;
     margin: auto;
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto', 'Roboto Medium';
+    font-weight: 500;
 }
 
 .pause {
