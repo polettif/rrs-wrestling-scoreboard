@@ -1,0 +1,249 @@
+[
+  {
+    "backcolor": "#ffffff"
+  },
+  [
+    {
+      "c": "#f4ca0c",
+      "w": 1.5
+    },
+    "ESC\n\n\nverlassen\n\n\n\nMenü",
+    {
+      "x": 10.5,
+      "w": 1.5
+    },
+    "F11\n\n\n\n\n\n\n\n\nVollbild\n(Firefox)"
+  ],
+  [
+    {
+      "c": "#cccccc",
+      "w": 0.75
+    },
+    "§",
+    {
+      "c": "#f4ca0c",
+      "w": 1.25
+    },
+    "1\n\n\nbild\n\n\n\nPausen-",
+    {
+      "c": "#cccccc"
+    },
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0",
+    "'",
+    "^",
+    {
+      "w": 2
+    },
+    "Backspace"
+  ],
+  [
+    {
+      "w": 1.5
+    },
+    "Tab",
+    {
+      "c": "#ff0000"
+    },
+    "Q\n\n\n\n\n\n\n\n\n-1\nVerw.",
+    "W\n\n\n\n\n\n\n\n\n+1\nVerw.",
+    "E\n\n\n\n\n\n\n\n\nAktiv-\nzeit",
+    {
+      "c": "#cccccc"
+    },
+    "R",
+    {
+      "c": "#f4ca0c"
+    },
+    "T\n\n\n\n\n\n\n\n\n←\nKampf",
+    "Z\n\n\n\n\n\n\n\n\n→\nKampf",
+    {
+      "c": "#cccccc"
+    },
+    "U",
+    {
+      "c": "#0000FF",
+      "t": "#ffffff"
+    },
+    "I\n\n\n\n\n\n\n\n\nAktiv-\nzeit",
+    "O\n\n\n\n\n\n\n\n\n+1\nVerw.",
+    "P\n\n\n\n\n\n\n\n\n-1\nVerw.",
+    {
+      "c": "#cccccc",
+      "t": "#000000"
+    },
+    "ü",
+    "¨",
+    {
+      "x": 0.25,
+      "w": 1.25,
+      "h": 2,
+      "w2": 1.5,
+      "h2": 1,
+      "x2": -0.25
+    },
+    "Enter"
+  ],
+  [
+    {
+      "w": 1.75
+    },
+    "Caps Lock",
+    "A",
+    "S",
+    {
+      "c": "#ff0000",
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ]
+    },
+    "D\n\n\n\n\n\n\n\n\n-1",
+    "F\n\n\n\n\n\n\n\n\n+1",
+    {
+      "c": "#cccccc"
+    },
+    "G",
+    "H",
+    {
+      "c": "#0000FF",
+      "t": "#ffffff"
+    },
+    "J\n\n\n\n\n\n\n\n\n+1",
+    {
+      "c": "#0000fF"
+    },
+    "K\n\n\n\n\n\n\n\n\n-1",
+    {
+      "c": "#cccccc",
+      "t": "#000000"
+    },
+    "L",
+    "ö",
+    "ä",
+    "$"
+  ],
+  [
+    {
+      "w": 1.25
+    },
+    "Shift",
+    "<",
+    {
+      "c": "#f4ca0c"
+    },
+    "Y\n\n\n\n\n\n\n\n\n\nReset",
+    {
+      "c": "#cccccc"
+    },
+    "X",
+    {
+      "c": "#ff0000",
+      "f": 3
+    },
+    "C\n\n\n\n\n\n\n\n\n-1\nTeam",
+    {
+      "f": 3
+    },
+    "V\n\n\n\n\n\n\n\n\n+1\nTeam",
+    {
+      "c": "#cccccc"
+    },
+    "B",
+    {
+      "c": "#0000FF",
+      "t": "#ffffff",
+      "f": 3
+    },
+    "N\n\n\n\n\n\n\n\n\n+1\nTeam",
+    {
+      "f": 3
+    },
+    "M\n\n\n\n\n\n\n\n\n-1\nTeam",
+    {
+      "c": "#f4ca0c",
+      "t": "#000000",
+      "fa": [
+        5
+      ],
+      "w": 1.25
+    },
+    ",\n\nEin-\nungen\n\n\n\nstell-",
+    {
+      "c": "#cccccc",
+      "f": 3
+    },
+    ".",
+    {
+      "f": 3
+    },
+    "-",
+    {
+      "f": 3,
+      "w": 2.5
+    },
+    "Shift"
+  ],
+  [
+    {
+      "f": 3,
+      "w": 1.25
+    },
+    "Ctrl",
+    {
+      "f": 3,
+      "w": 1.25
+    },
+    "Win",
+    {
+      "f": 3,
+      "w": 1.25
+    },
+    "Alt",
+    {
+      "c": "#f4ca0c",
+      "a": 7,
+      "f": 3,
+      "w": 6.25
+    },
+    "Zeit Start / Stop",
+    {
+      "c": "#cccccc",
+      "a": 4,
+      "f": 3,
+      "w": 1.25
+    },
+    "AltGr",
+    {
+      "a": 7,
+      "w": 1.25
+    },
+    "",
+    {
+      "a": 4,
+      "f": 3,
+      "w": 1.25
+    },
+    "Menu",
+    {
+      "f": 3,
+      "w": 1.25
+    },
+    "Ctrl"
+  ]
+]
